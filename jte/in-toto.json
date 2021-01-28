@@ -1,0 +1,27 @@
+{
+  "named": {
+    "clone": {
+      "expected_materials": [],
+      "expected_products": [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+    }, 
+    "vcs-log": {
+      "expected_materials": [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "clone"]],
+      "expected_products": [
+        ["CREATE", "demo-project/vcs.log"]
+      ]
+    }
+  },
+"ordered": [
+    {
+      "name": "clone",
+      "expected_materials": [],
+      "expected_products": [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+    },{
+      "name": "vcs-log",
+      "expected_materials": [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "clone"]],
+      "expected_products": [
+        ["CREATE", "demo-project/vcs.log"]
+      ]
+    }
+]
+}

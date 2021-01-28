@@ -1,16 +1,30 @@
 from securesystemslib import interface
 from in_toto.models.layout import Layout
 from in_toto.models.metadata import Metablock
+import json
 
 def main():
+  with open('../jte/in-toto.json') as f:
+    read_data = f.read()
+    print('in-toto.json: ' + read_data)
+    config_json = json.loads(read_data)
+    print('create_layout.main')
+
+  create_layouts(config_json)  
+
+def create_layouts(config_json):
+  create_rootlayout(config_json)
+  create_sublayout(config_json)
+
+
+def create_rootlayout(config_json):  
   # Load Alice's private key to later sign the layout
   key_alice = interface.import_rsa_privatekey_from_file("alice")
   # Fetch and load Bob's and Carl's public keys
   # to specify that they are authorized to perform certain step in the layout
   key_bob = interface.import_rsa_publickey_from_file("../functionary_bob/bob.pub")
   key_carl = interface.import_rsa_publickey_from_file("../functionary_carl/carl.pub")
-  key_bob_private = interface.import_rsa_privatekey_from_file("../functionary_bob/bob")
-
+  
   layout = Layout.read({
       "_type": "layout",
       "keys": {
@@ -91,6 +105,10 @@ def main():
   metadata.dump("root.layout")
   print('created root.layout')
 
+def create_sublayout(config_json):
+  key_bob = interface.import_rsa_publickey_from_file("../functionary_bob/bob.pub")
+  key_bob_private = interface.import_rsa_privatekey_from_file("../functionary_bob/bob")
+
   upstream_layout = Layout.read({ 
     "_type" : "layout",
     "keys": {
@@ -100,7 +118,7 @@ def main():
       {
           "name": "clone",
           "expected_materials": [],
-          "expected_products": [["CREATE", "demo-project/foo.py"], ["DISALLOW", "*"]],
+          "expected_products": config_json["named"]["clone"]["expected_products"],
           "pubkeys": [key_bob["keyid"]],
           "expected_command": [
               "git",
@@ -112,9 +130,7 @@ def main():
         "name": "vcs-log",
         "threshold": 1,
         "expected_materials": [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "clone"]],
-        "expected_products": [
-          ["CREATE", "vcs.log"]
-        ],
+        "expected_products": config_json["named"]["vcs-log"]["expected_products"],
         "pubkeys": [
           key_bob["keyid"]
         ],
