@@ -17,4 +17,4 @@ RUN pip3 install cryptography securesystemslib[crypto] in-toto
 
 RUN mkdir /workspace
 WORKDIR /workspace
-COPY sublayout-example demo
+COPY . demo
