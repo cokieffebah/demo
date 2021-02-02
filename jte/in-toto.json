@@ -9,19 +9,20 @@
       "expected_products": [
         ["CREATE", "demo-project/vcs.log"]
       ]
-    }
-  },
-"ordered": [
-    {
-      "name": "clone",
+    },
+    "build": {
       "expected_materials": [],
       "expected_products": [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
-    },{
-      "name": "vcs-log",
-      "expected_materials": [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "clone"]],
-      "expected_products": [
-        ["CREATE", "demo-project/vcs.log"]
-      ]
     }
-]
+
+  },
+  "libraries":{
+    "in_toto_ex":{
+      "build": {
+        "expected_materials": [],
+        "expected_products": [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+      }
+    }
+  }
+  
 }
