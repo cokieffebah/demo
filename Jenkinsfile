@@ -4,6 +4,7 @@ docker.image("in-toto-python:demo").inside {
 }
 
 wrap_around{
+  sh "ls -lt"
   build()
 }
   
