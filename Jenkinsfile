@@ -1,6 +1,6 @@
+build()
 
-wrap_around([:]){
-  build()
-}
+wrap_around{}
+  
 scan()
 deploy()
