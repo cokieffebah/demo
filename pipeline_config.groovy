@@ -15,7 +15,7 @@ libraries{
     }
 
     in_toto_utils{
-
+        inside_image = "in-toto-python:demo"
     }
 
 }
