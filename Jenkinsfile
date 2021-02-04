@@ -2,7 +2,7 @@ node{
     cleanWs()
     try{
         checkout scm
-    }catch(AbortException ex) {
+    }catch(hudson.AbortException ex) {
         println "scm var not present, skipping source code checkout" 
     }catch(err){
         println "exception ${err}" 
