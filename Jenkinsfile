@@ -1,6 +1,5 @@
 
-wrap_around{
-  echo "hello"  
+wrap_around{ 
   sh "ls -lt"
   build()
 }
