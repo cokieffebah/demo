@@ -12,7 +12,7 @@ node{
 }
 
 wrap_around("build"){
-  sh "ls -lt"
+  sh "ls -lta"
   build()
 }
   
