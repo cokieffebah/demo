@@ -11,7 +11,7 @@ node{
     stash name: 'workspace', allowEmpty: true, useDefaultExcludes: false
 }
 
-wrap_around{
+wrap_around("build"){
   sh "ls -lt"
   build()
 }
