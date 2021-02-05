@@ -16,6 +16,10 @@ libraries{
 
     in_toto_utils{
         inside_image = "in-toto-python:demo"
+
+        create_layout {
+            extra_skip_libs = ['in_toto_utils']
+        }
     }
 
 }
