@@ -9,7 +9,7 @@ libraries{
                 expected_materials = []
                 expected_products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
             }
-            deploy
+            deploy{}
         }
     }
 
