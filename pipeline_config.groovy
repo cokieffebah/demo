@@ -19,6 +19,7 @@ libraries{
 
         create_layout {
             extra_skip_libs = ['in_toto_utils']
+            skip_steps = ['get_intoto_layout']
         }
     }
 
