@@ -2,8 +2,9 @@ libraries{
     in_toto_ex{
         in_toto{
             build{ 
-                expected_materials = []
-                expected_products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+                materials = []
+                products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+                key = "functionary_bob/bob"
             }
             scan{
                 expected_materials = []
