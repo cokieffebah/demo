@@ -20,7 +20,7 @@ wrap_around("scan"){
   scan()
 }
 
-wrap_around("package"){  
+wrap_around("package_app"){  
   package_app()
 }
 
