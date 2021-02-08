@@ -9,6 +9,7 @@ libraries{
             scan{
                 materials = [["ALLOW", "demo-project/*"]]
                 products = [["ALLOW", "demo-project/*"], ["DISALLOW", "*"]]
+                key = "functionary_bob/bob"
             }
             deploy{}
         }
