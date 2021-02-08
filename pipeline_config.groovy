@@ -12,7 +12,7 @@ libraries{
                 key = "functionary_bob/bob"
             }
             
-            \\u71ackage{
+            _package{
                 // materials =  [
                 //     ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
                 //     ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
