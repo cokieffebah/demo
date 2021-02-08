@@ -5,7 +5,7 @@ libraries{
                 materials = []
                 products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
                 key = "functionary_bob/bob"
-            }ß
+            }
             scan{
                 materials = [["ALLOW", "demo-project/*"]]
                 products = [["ALLOW", "demo-project/*"], ["DISALLOW", "*"]]
