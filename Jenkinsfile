@@ -21,7 +21,7 @@ wrap_around("scan"){
 }
 
 wrap_around("package"){  
-  package()
+  package_app()
 }
 
 deploy()

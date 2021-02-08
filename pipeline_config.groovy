@@ -12,13 +12,13 @@ libraries{
                 key = "functionary_bob/bob"
             }
             
-            _package{
-                // materials =  [
-                //     ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
-                //     ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
+            package_app{
+                materials =  [
+                    ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
+                    ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
 
-                // products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
-                // key = "functionary_carl/carl"
+                products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
+                key = "functionary_carl/carl"
             }
             deploy{}
         }
