@@ -16,5 +16,8 @@ wrap_around("build"){
   build()
 }
   
-scan()
+wrap_around("scan"){  
+  scan()
+}
+
 deploy()

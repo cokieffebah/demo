@@ -5,10 +5,10 @@ libraries{
                 materials = []
                 products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
                 key = "functionary_bob/bob"
-            }
+            }ß
             scan{
-                expected_materials = []
-                expected_products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+                materials = [["ALLOW", "demo-project/*"]]
+                products = [["ALLOW", "demo-project/*"], ["DISALLOW", "*"]]
             }
             deploy{}
         }
