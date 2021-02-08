@@ -7,8 +7,8 @@ libraries{
                 key = "functionary_bob/bob"
             }
             scan{
-                materials = [["ALLOW", "demo-project/*"]]
-                products = [["ALLOW", "demo-project/*"], ["DISALLOW", "*"]]
+                materials = [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"]]
+                products = [["CREATE", "scan.log"], ["DISALLOW", "*"]]
                 key = "functionary_bob/bob"
             }
             deploy{}
