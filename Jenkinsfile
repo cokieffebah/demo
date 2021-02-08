@@ -20,4 +20,8 @@ wrap_around("scan"){
   scan()
 }
 
+wrap_around("package"){  
+  package()
+}
+
 deploy()

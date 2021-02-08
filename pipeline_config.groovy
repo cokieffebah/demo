@@ -11,6 +11,14 @@ libraries{
                 products = [["CREATE", "scan.log"], ["DISALLOW", "*"]]
                 key = "functionary_bob/bob"
             }
+            package{
+                materials =  [
+                    ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
+                    ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
+
+                products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
+                key = "functionary_carl/carl"
+            }
             deploy{}
         }
     }
