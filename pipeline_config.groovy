@@ -45,13 +45,14 @@ libraries{
 
     in_toto_utils{
         inside_image = "in-toto-python:demo"
-
-        collector {
-
+        functionary{
+            path = "func"
+            generate = true
         }
 
-        create_layout {
-            
+        layout{
+            signer = "func"
+            generate = false
         }
     }
 
