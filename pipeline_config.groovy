@@ -5,7 +5,7 @@ libraries{
                 record{
                     materials = []
                     products = "demo-project/*"
-                    key = "functionary_bob/bob"
+                    key = "func"
                 }
                 
                 layout{
@@ -17,7 +17,7 @@ libraries{
                 record{
                     materials = "demo-project/*"
                     products = "scan.log"
-                    key = "functionary_bob/bob"
+                    key = "func"
                 }
                 layout{
                     materials = [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"]]
@@ -34,7 +34,7 @@ libraries{
                     products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
                 }
                 record{
-                    key = "functionary_carl/carl"
+                    key = "func"
                     materials =  "demo-project/* scan.log"
                     products = "demo-project.tar.gz"
                 }
