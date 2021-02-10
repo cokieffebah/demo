@@ -11,16 +11,16 @@ node{
     stash name: 'workspace', allowEmpty: true, useDefaultExcludes: false
 }
 
-wrap_around("build"){
+intoto_record("build"){
   sh "ls -lta"
   build()
 }
   
-wrap_around("scan"){  
+intoto_record("scan"){  
   scan()
 }
 
-wrap_around("package_app"){  
+intoto_record("package_app"){  
   package_app()
 }
 
