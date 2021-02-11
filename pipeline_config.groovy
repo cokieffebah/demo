@@ -63,7 +63,6 @@ libraries{
                     ["ALLOW", "func.pub"],
                     ["ALLOW", "func"],
                     ["ALLOW", "the.layout"],
-                    ["ALLOW", "layout.json"],
                     ["DISALLOW", "*"]
                 ],
                 "expected_products": [
