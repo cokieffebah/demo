@@ -9,8 +9,8 @@ libraries{
                 }
                 
                 layout{
-                    materials = []
-                    products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
+                    expected_materials = []
+                    expected_products = [["CREATE", "demo-project/*"], ["DISALLOW", "*"]]
                 }
             }
             scan{
@@ -20,18 +20,18 @@ libraries{
                     key = "func"
                 }
                 layout{
-                    materials = [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"]]
-                    products = [["CREATE", "scan.log"], ["DISALLOW", "*"]]
+                    expected_materials = [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"]]
+                    expected_products = [["CREATE", "scan.log"], ["DISALLOW", "*"]]
                 }
             }
             
             package_app{
                 layout{
-                    materials =  [
+                    expected_materials =  [
                     ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
                     ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
 
-                    products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
+                    expected_products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
                 }
                 record{
                     key = "func"
@@ -53,6 +53,29 @@ libraries{
         layout{
             signer = "func"
             generate = false
+            inspect = [ 
+                "name": "untar",
+                "expected_materials": [
+                    ["MATCH", "demo-project.tar.gz", "WITH", "PRODUCTS", "FROM", "package_app"],
+                    ["DISALLOW", "*"]
+                ],
+                "expected_products": [
+                    ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"],
+                    ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"],
+                    ["ALLOW", "demo-project/.git/*"],
+                    ["ALLOW", "demo-project.tar.gz"],
+                    ["ALLOW", ".keep"],
+                    ["ALLOW", "func.pub"],
+                    ["ALLOW", "root.layout"],
+                    ["DISALLOW", "*"]
+                ],
+                "run": [
+                    "tar",
+                    "xzf",
+                    "demo-project.tar.gz",
+                ]
+            ]
+                
         }
     }
 
