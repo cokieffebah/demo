@@ -52,8 +52,6 @@ libraries{
 
         layout{
             signer_path = "func" // private key path
-            generate = false
-            // key_paths = ["func.pub"] // public keys
 
             inspect = [[ 
                 "name": "untar",
