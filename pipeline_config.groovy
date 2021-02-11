@@ -52,11 +52,18 @@ libraries{
 
         layout{
             signer_path = "func" // private key path
+            output_file = "the.layout"
+            input_json = "layout.json"
 
             inspect = [[ 
                 "name": "untar",
                 "expected_materials": [
                     ["MATCH", "demo-project.tar.gz", "WITH", "PRODUCTS", "FROM", "package_app"],
+                    ["ALLOW", ".keep"],
+                    ["ALLOW", "func.pub"],
+                    ["ALLOW", "func"],
+                    ["ALLOW", "the.layout"],
+                    ["ALLOW", "layout.json"],
                     ["DISALLOW", "*"]
                 ],
                 "expected_products": [
@@ -66,7 +73,8 @@ libraries{
                     ["ALLOW", "demo-project.tar.gz"],
                     ["ALLOW", ".keep"],
                     ["ALLOW", "func.pub"],
-                    ["ALLOW", "root.layout"],
+                    ["ALLOW", "func"],
+                    ["ALLOW", "the.layout"],
                     ["DISALLOW", "*"]
                 ],
                 "run": [
