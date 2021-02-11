@@ -53,6 +53,8 @@ libraries{
         layout{
             signer = "func"
             generate = false
+            keys = ["func"]
+
             inspect = [[ 
                 "name": "untar",
                 "expected_materials": [
