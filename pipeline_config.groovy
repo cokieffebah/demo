@@ -53,7 +53,7 @@ libraries{
         layout{
             signer = "func"
             generate = false
-            keys = ["func"]
+            key_paths = ["func"]
 
             inspect = [[ 
                 "name": "untar",
