@@ -46,14 +46,14 @@ libraries{
     in_toto_utils{
         inside_image = "in-toto-python:demo"
         functionary{
-            path = "func"
+            path = "func" // the private key of the functionary; routine will also generate public key
             generate = true
         }
 
         layout{
-            signer = "func" // private key path
+            signer_path = "func" // private key path
             generate = false
-            key_paths = ["func.pub"] // public keys
+            // key_paths = ["func.pub"] // public keys
 
             inspect = [[ 
                 "name": "untar",
