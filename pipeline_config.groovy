@@ -53,7 +53,7 @@ libraries{
         layout{
             signer = "func"
             generate = false
-            inspect = [ 
+            inspect = [[ 
                 "name": "untar",
                 "expected_materials": [
                     ["MATCH", "demo-project.tar.gz", "WITH", "PRODUCTS", "FROM", "package_app"],
@@ -74,7 +74,7 @@ libraries{
                     "xzf",
                     "demo-project.tar.gz",
                 ]
-            ]
+            ]]
                 
         }
     }
