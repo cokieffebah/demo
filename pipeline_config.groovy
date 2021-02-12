@@ -24,16 +24,16 @@ libraries{
             }
             
             package_app{
+                record{
+                    materials =  "demo-project/* scan.log"
+                    products = "demo-project.tar.gz"
+                }
                 layout{
                     expected_materials =  [
                     ["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"], 
                     ["MATCH", "scan.log", "WITH", "PRODUCTS", "FROM", "scan"], ["DISALLOW", "*"]]
 
                     expected_products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
-                }
-                record{
-                    materials =  "demo-project/* scan.log"
-                    products = "demo-project.tar.gz"
                 }
             }
             deploy{}
@@ -59,7 +59,6 @@ libraries{
                     ["ALLOW", ".keep"],
                     ["ALLOW", "func.pub"],
                     ["ALLOW", "func"],
-                    ["ALLOW", "the.layout"],
                     ["DISALLOW", "*"]
                 ],
                 "expected_products": [
@@ -70,7 +69,6 @@ libraries{
                     ["ALLOW", ".keep"],
                     ["ALLOW", "func.pub"],
                     ["ALLOW", "func"],
-                    ["ALLOW", "the.layout"],
                     ["DISALLOW", "*"]
                 ],
                 "run": [
