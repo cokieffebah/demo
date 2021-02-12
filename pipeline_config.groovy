@@ -44,6 +44,7 @@ libraries{
         inside_image = "in-toto-python:demo"
         functionary{
             path = "func" // the private key of the functionary; routine will also generate public key
+            generate = true
         }
 
         layout{
