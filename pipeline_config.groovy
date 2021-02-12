@@ -5,7 +5,6 @@ libraries{
                 record{
                     materials = []
                     products = "demo-project/*"
-                    key = "func"
                 }
                 
                 layout{
@@ -17,7 +16,6 @@ libraries{
                 record{
                     materials = "demo-project/*"
                     products = "scan.log"
-                    key = "func"
                 }
                 layout{
                     expected_materials = [["MATCH", "demo-project/*", "WITH", "PRODUCTS", "FROM", "build"]]
@@ -34,7 +32,6 @@ libraries{
                     expected_products = [["CREATE", "demo-project.tar.gz"], ["DISALLOW", "*"]]
                 }
                 record{
-                    key = "func"
                     materials =  "demo-project/* scan.log"
                     products = "demo-project.tar.gz"
                 }
@@ -47,7 +44,6 @@ libraries{
         inside_image = "in-toto-python:demo"
         functionary{
             path = "func" // the private key of the functionary; routine will also generate public key
-            generate = true
         }
 
         layout{
