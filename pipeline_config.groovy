@@ -59,6 +59,7 @@ libraries{
                     ["ALLOW", ".keep"],
                     ["ALLOW", "func.pub"],
                     ["ALLOW", "func"],
+                    ["ALLOW", "the.layout"],
                     ["DISALLOW", "*"]
                 ],
                 "expected_products": [
@@ -69,6 +70,7 @@ libraries{
                     ["ALLOW", ".keep"],
                     ["ALLOW", "func.pub"],
                     ["ALLOW", "func"],
+                    ["ALLOW", "the.layout"],
                     ["DISALLOW", "*"]
                 ],
                 "run": [
