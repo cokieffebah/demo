@@ -25,6 +25,6 @@ intoto_record("package_app"){
 }
 
 porter_utils.image_wrap {
-  sh("porter create")
+  sh("~/.porter/porter create")
   deploy()
 }
