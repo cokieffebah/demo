@@ -24,9 +24,7 @@ intoto_record("package_app"){
   package_app()
 }
 
-docker.image("intoto-porter:demo").inside {
-        unstash 'workspace'
-        sh("porter create")
-        deploy()
-        stash 'workspace'
+porter_utils.image_wrap {
+  sh("porter create")
+  deploy()
 }

@@ -40,6 +40,10 @@ libraries{
         }
     }
 
+    porter{
+        inside_image = "intoto-porter:demo"
+    }
+
     in_toto_utils{
         inside_image = "in-toto-python:demo"
         functionary{
