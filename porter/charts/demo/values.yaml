@@ -5,10 +5,11 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
+  repository: docker.io/sebbyii/demoproduct
+  pullPolicy: Always
+  digest: "sha256:41a2b70dd71a131b50c0a84043a52a4aadef9dc9cafe9934c78ba21c388f830f"
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+
 
 imagePullSecrets: []
 nameOverride: ""
