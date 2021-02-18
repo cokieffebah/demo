@@ -14,7 +14,7 @@ ENV PORTER_HOME=/root/.porter
 # signy stuff
 # needs go lang
 COPY --from=golang:1.15-alpine /usr/local/go/ /usr/local/go/
-RUN apk add git make
+RUN apk add git make docker
 
 ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPATH="/workspace/go/"
