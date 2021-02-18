@@ -26,5 +26,6 @@ intoto_record("package_app"){
 
 porter_utils.image_wrap {
   sh("~/.porter/porter create")
+  sh("./scripts/docker-push.sh") //signy script to test notary
   deploy()
 }
