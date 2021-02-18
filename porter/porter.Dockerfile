@@ -3,9 +3,16 @@ LABEL maintainer="Carlos OKieffe <okieffe_carlos@bah.com>"
 
 COPY ./porter porter
 
-RUN apk add curl
+RUN apk add curl ca-certificates
+
+# zscaler at bah
+RUN cp porter/certs/* /usr/local/share/ca-certificates && \
+    chmod 644 /usr/local/share/ca-certificates/* && \
+    update-ca-certificates
 
 # now adding porter stuff
+#RUN echo insecure >> ~/.curlrc #having issue with porter curl
+
 RUN porter/install-porter.sh
 ENV PORTER_HOME=/root/.porter
 
