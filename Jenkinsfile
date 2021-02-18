@@ -35,7 +35,7 @@ porter_utils.image_wrap {
   sh(script:"~/.porter/porter create")
 
   def sha = sh(returnStdout: true, script:"docker images --no-trunc --quiet localhost:5000/intoto-demo:latest")
-  println "sha: ${returnStdout}"
-  
+  println "sha: ${sha}"
+
   deploy()
 }
