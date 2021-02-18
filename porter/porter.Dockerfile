@@ -17,7 +17,7 @@ COPY --from=golang:1.15-alpine /usr/local/go/ /usr/local/go/
 RUN apk add git make
 
 ENV PATH="/usr/local/go/bin:${PATH}"
-ENV GOPATH="/opt/go/"
+ENV GOPATH="/workspace/go/"
 
 RUN mkdir -p $GOPATH/bin
 RUN mkdir -p $GOPATH/src/github.com
