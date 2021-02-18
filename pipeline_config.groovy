@@ -41,7 +41,7 @@ libraries{
     }
 
     porter{
-        inside_image = "intoto-porter:demo"
+        inside_image = "intoto-porter-signy:demo"
     }
 
     in_toto_utils{
