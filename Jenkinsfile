@@ -35,7 +35,7 @@ porter_utils.image_wrap {
   
   sh(script:"~/.porter/porter create")
 
-  sh(script: "sed 's/xxx_sha256xxxsh256_xxx/${docker_sha}/' porter/porter.yaml > porter.yaml"
+  sh(script: "sed 's/xxx_sha256xxxsh256_xxx/${docker_sha}/' porter/porter.yaml > porter.yaml")
   sh(script: "cp porter/Dockerfile.tmpl .")
   deploy()
 }
