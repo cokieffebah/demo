@@ -25,9 +25,10 @@ intoto_record("package_app"){
 }
 
 porter_utils.image_wrap {
-  sh("~/.porter/porter create")
-  sh("docker build -t intoto-demo:latest -f porter/porter.Dockerfile .")
-  sh("docker image tag intoto-demo:latest localhost:5000/intoto-demo:latest")
-  sh("DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://localhost:4443 docker -D push localhost:5000/intoto-demo:latest") 
+  sh(script:"~/.porter/porter create")
+  sh(script:"docker build -t intoto-demo:latest -f porter/porter.Dockerfile .")
+  sh(script:"docker image tag intoto-demo:latest localhost:5000/intoto-demo:latest")
+  def sh_status = sh(returnStatus: true, script:"DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://0.0.0.0:4443 docker -D push localhost:5000/intoto-demo:latest") 
+  
   deploy()
 }
